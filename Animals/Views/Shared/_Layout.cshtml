@@ -33,7 +33,7 @@
                     }
                     else
                     {
-                        <li>@Html.ActionLink("SingOut", "SingOut", "Account")</li>
+                        <li><a href="#" id="sign-out">SingOut</a></li>
                     }
                 </ul>
             </div>
@@ -49,6 +49,7 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    <script src="@Url.Content("~/Scripts/Controller/Account/index.js")"></script>
     @RenderSection("scripts", required: false)
 </body>
 </html>
