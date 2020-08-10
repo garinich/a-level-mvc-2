@@ -1,0 +1,33 @@
+﻿@model Animals.Models.RegisterPostModel
+@{
+    ViewBag.Title = "Registeration";
+}
+
+    <div><br /><br />
+        @using (Html.BeginForm("Register", "Account", FormMethod.Post))
+        {
+            <label style="display: inline-block;width: 140px">UserName: </label>
+            @Html.TextBoxFor(x => x.UserName, null, new { maxlength = 20, required = true });<br />
+
+            <label style="display: inline-block;width: 140px">LastName: </label>
+            @Html.TextBoxFor(x => x.LastName, null, new { required = true });<br />
+
+            <label style="display: inline-block;width: 140px">Email: </label>
+            @Html.TextBoxFor(x => x.Email, null, new { required = true });<br />
+
+            <label style="display: inline-block;width: 140px">City: </label>
+            @Html.TextBoxFor(x => x.City, null, new { maxlength = 20, required = true });<br />
+
+            <label style="display: inline-block;width: 140px">Lang (max 2 chars): </label>
+            @Html.TextBoxFor(x => x.Lang, null, new { minlength = 2, maxlength = 2, required = true });<br />
+
+            <label style="display: inline-block;width: 140px">BirthDate: </label>
+            @Html.TextBoxFor(x => x.BirthDate, null, new { Type = "date", required = true });<br />
+
+            <label style="display: inline-block;width: 140px">Password: </label>
+            @Html.PasswordFor(x => x.Password, new { minlength = 6, maxlength = 12, required = true });<br /><br />
+
+            <button type="submit">submit</button>
+        }
+    </div>
+

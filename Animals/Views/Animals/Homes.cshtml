@@ -1,0 +1,42 @@
+@model Animals.Models.GetAllHomeViewModel
+
+@{
+    ViewBag.Title = "title";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>
+    Homes
+    @if (@Model.Lang.Length == 0)
+    {
+        <span>(@Html.ActionLink("Login", "Login", "Account"))</span>
+    }
+    else
+    {
+        <span>(User Lang: @Model.Lang)</span>
+    }
+</h2>
+
+<table class="table table-striped">
+    <tr>
+        <th>Id</th>
+        <th>Home Name</th>
+        <th>Animals</th>
+        @*<th>Actions</th>*@
+    </tr>
+    @foreach (var home in Model.Homes)
+    {
+        <tr>
+            <td>@home.Id</td>
+            <td>@home.Name</td>
+            <td>
+                <ol>
+                    @foreach (var animal in home.Animals)
+                    {
+                        <li>@animal.Name (@animal.Type)</li>
+                    }
+                </ol>
+            </td>
+        </tr>
+    }
+</table>

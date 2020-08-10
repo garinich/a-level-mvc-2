@@ -1,0 +1,18 @@
+﻿@model Animals.Models.LoginPostModel
+@{
+    ViewBag.Title = "Login";
+}
+
+    <div><br /><br />
+        @using (Html.BeginForm("SignIn", "Account", FormMethod.Post))
+        {
+            <label style="display: inline-block;width: 140px">UserName: </label>
+            @Html.TextBoxFor(x => x.UserName, null, new { maxlength = 20, required = true });<br />
+
+            <label style="display: inline-block;width: 140px">Password: </label>
+            @Html.PasswordFor(x => x.Password, new { minlength = 6, maxlength = 12, required = true });<br /><br />
+
+            <button type="submit">submit</button>
+        }
+    </div>
+
